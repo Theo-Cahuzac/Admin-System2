@@ -1,0 +1,16 @@
+$ORIGIN l2-9.ephec-ti.be.
+$TTL 300
+
+@       IN      SOA     ns.l2-9.ephec-ti.be. hostmaster.l2-9.ephec-ti.be. (
+                        2025032903 ; serial
+                        21600      ; refresh after 6 hours
+                        3600       ; retry after 1 hour
+                        604800     ; expire after 1 week
+                        86400 )    ; minimum TTL of 1 day
+
+@       IN  NS   ns.l2-9.ephec-ti.be.
+ns      IN  A    54.36.183.38
+www     IN  CNAME ns
+blog    IN  CNAME ns
+
+_acme-challenge.l2-9.ephec-ti.be. IN     TXT     "vI5nR-BqG-NfFCrag90THwVaDiVBJWytSetdgzybsKg"
