@@ -1,0 +1,23 @@
+services:
+  dns:
+    build: .
+    container_name: dns
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+
+    restart: unless-stopped
+  mailserver:
+    hostname: mail.l2-9.ephec-ti.be
+    # ...
+    volumes:
+      - ./mail-data:/var/mail
+      - /etc/letsencrypt:/etc/letsencrypt:ro  # Ajoutez ce volume pour les certificats
+    ports:
+      - "25:25"
+      - "587:587"
+      - "465:465"
+      - "143:143"
+      - "993:993"
+
+
